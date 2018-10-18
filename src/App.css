@@ -1,32 +1,197 @@
-.App {
-  text-align: center;
+body {
+	background-color: whitesmoke;
+	font-family: "Roboto Slab", serif;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+/* .panel-body {
+	height: 400px;
+	overflow: hidden;
+} */
+.app {
+	display: flex;
+	height: 100vh;
+	flex-direction: column;
+}
+.appHeader {
+	background-color: rgb(59, 59, 59);
+	padding: 10px 10px 10px 20px;
+	color: white;
+	font-size: 25px;
+	position: static;
+	width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.notesContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	flex-direction: column;
+	padding-top: 10px;
+	padding-left: 10px;
+	overflow: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.panel-default,
+.panel-heading,
+.panel-default > .panel-heading,
+.panel-body {
+	border: none;
+
+	color: rgb(59, 59, 59);
+	background-image: none;
+	background-color: white;
+	cursor: pointer;
+	/* white-space: pre-wrap; */
+	/* text-overflow: ellipsis;
+	white-space: nowrap; */
+	/* overflow: auto; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.panel-default {
+	width: 400px;
+	margin: 10px;
+	flex-shrink: 0;
+	padding: 5px;
+	border-radius: 0;
+	box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+	padding: 0;
+	transition: all 0.2s ease-in-out;
+	position: relative;
+}
+
+.panel-default:hover {
+	transform: scale(1.03);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fadeout {
+	width: 400px;
+	height: 100px;
+	background-image: linear-gradient(transparent, white);
+	position: absolute;
+	margin: 0;
+	top: 200px;
+	z-index: 100;
+}
+
+.noteTitle,
+.modal-header {
+	font-weight: bold;
+	font-size: 25px;
+	color: rgb(59, 59, 59);
+	padding: 20px 20px 10px 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.noteTitle.form-control {
+	width: 100%;
+}
+
+.noteTitle.lighter,
+.noteContent.lighter {
+	color: rgba(153, 153, 153);
+}
+
+.crossout {
+	text-decoration: line-through;
+}
+
+.noteContent {
+	padding: 0 20px 20px 20px;
+	height: auto;
+	font-size: 16px;
+
+	color: rgb(59, 59, 59);
+}
+
+.modal-content {
+	border: none;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+	border-radius: 0;
+}
+
+.modal-content,
+.modal-header,
+.modal-footer {
+	border: none;
+}
+
+.modalButtons {
+	float: right;
+}
+.dateEdited {
+	float: left;
+	margin: 0 0 0 10px;
+	line-height: 40px;
+	color: rgba(153, 153, 153);
+}
+
+.modal-body {
+	padding: 0 20px 0 20px;
+}
+
+.form-control {
+	border: none;
+	box-shadow: none;
+	width: auto;
+	padding: 0;
+}
+
+textarea.form-control,
+.deleteContent {
+	width: 100%;
+	resize: none;
+	height: 400px;
+	box-shadow: none;
+	border: none;
+	overflow: auto;
+	white-space: pre-wrap;
+}
+
+textarea.form-control:focus {
+	box-shadow: none;
+	border: none;
+}
+
+input[type="text"],
+textarea {
+	outline: none;
+	border: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+	box-shadow: none;
+	border: none;
+}
+
+.noteButton {
+	text-transform: uppercase;
+	background-image: none;
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	color: rgb(59, 59, 59);
+	display: inline-flex;
+	align-items: center;
+	padding: 10px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+.noteButton > p {
+	margin: 0;
+}
+.noteButton:hover > p {
+	text-decoration: underline;
+}
+
+.deleteButton:hover {
+	color: red;
+}
+
+.glyphicon {
+	padding-right: 5px;
 }
